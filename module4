@@ -1,0 +1,55 @@
+(function(window) {
+    var helloSpeaker = new Object();
+    var speakWord = "Hello";
+    helloSpeaker.speak = function(name) {
+        console.log(speakWord + " " + name);
+    };
+    window.helloSpeaker = helloSpeaker;
+})(window);
+ 17  module4_solution/index.html 
+@@ -0,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Assignment Solution for Module 4</title>
+    <script src="SpeakHello.js"></script>
+    <script src="SpeakGoodBye.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <h1>Solution of Assignment 4</h1>
+    <p>Check out the console in the web developer tools to see if it works!</p>
+</body>
+
+</html>
+ 28  module4_solution/script.js 
+@@ -0,0 +1,28 @@
+/*
+Solution of assignment 4:
+Expected output:
+Hello Yaakov
+Good Bye John
+Good Bye Jen
+Good Bye Jason
+Hello Paul
+Hello Frank
+Hello Larry
+Hello Paula
+Hello Laura
+Good Bye Jim
+*/
+
+(function() {
+    var names = ["Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
+    for (var i = 0; i < names.length; i++) {
+        var firstLetter = names[i].charAt(0).toLowerCase();
+        if (firstLetter === 'j') {
+            byeSpeaker.speak(names[i]);
+        } else {
+            helloSpeaker.speak(names[i]);
+        }
+    }
+})()
